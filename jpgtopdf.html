@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JPG to PDF Converter – Compress & Optimize Images Online</title>
+  <meta name="description" content="Free, fast, and secure JPG to PDF converter. Compress, resize, reorder, and export images to a single PDF. 100% client‑side. SEO‑optimized and AdSense‑ready." />
+  <link rel="canonical" href="https://example.com/jpg-to-pdf" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="JPG to PDF Converter – Compress & Optimize Images Online" />
+  <meta property="og:description" content="Compress, resize, reorder, and convert JPG images to PDF in your browser. No uploads. AdSense-ready template." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/jpg-to-pdf" />
+  <meta property="og:image" content="https://example.com/og-image.jpg" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="JPG to PDF Converter – Compress & Optimize Images Online" />
+  <meta name="twitter:description" content="Compress, resize, reorder, and convert JPG images to PDF in your browser. No uploads." />
+  <meta name="twitter:image" content="https://example.com/og-image.jpg" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "JPG to PDF Converter",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "description": "Compress JPGs and convert to PDF completely in the browser.",
+    "url": "https://example.com/jpg-to-pdf"
+  }
+  </script>
+
+  <!-- Preload fonts (optional example) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0b1020; --panel:#111832; --muted:#7e8da4; --text:#e8efff; --brand:#4f8cff; --brand-2:#20c997; --accent:#ffd166;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 800px at 70% -10%, #1a2652 0%, rgba(26,38,82,0) 60%),var(--bg);color:var(--text);line-height:1.55}
+    a{color:var(--brand)}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo-badge{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand),#9ad0ff);display:grid;place-items:center;color:#06122e;font-weight:800}
+    h1{margin:0;font-size:clamp(22px,3.5vw,32px)}
+    .tagline{color:var(--muted);font-size:14px}
+
+    .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:18px}
+    @media(min-width:980px){.grid{grid-template-columns:1fr 320px}}
+
+    .card{background:linear-gradient(145deg,#0f1730,#0c1228);border:1px solid #1d2b57;border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .card > .head{padding:18px 18px 0}
+    .card > .body{padding:18px}
+
+    .uploader{border:2px dashed #2a3a74;border-radius:var(--radius);padding:28px;text-align:center;background:rgba(16,23,48,.35)}
+    .uploader.dragover{background:rgba(79,140,255,.12);border-color:var(--brand)}
+    .uploader input{display:none}
+    .btn{appearance:none;border:0;cursor:pointer;background:linear-gradient(135deg,var(--brand),#7bb3ff);color:#04102e;padding:12px 16px;border-radius:12px;font-weight:700;box-shadow:0 8px 20px rgba(79,140,255,.25)}
+    .btn.secondary{background:linear-gradient(135deg,#1f2a52,#172042);color:var(--text);border:1px solid #2a3a74}
+    .btn.inline{padding:8px 12px;border-radius:10px;font-weight:600}
+    .btn:disabled{opacity:.5;cursor:not-allowed}
+    .controls{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    @media(min-width:700px){.controls{grid-template-columns:repeat(4,1fr)}}
+    label{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#9db0d0;margin-bottom:6px}
+    input[type="range"]{width:100%}
+    .range-row{display:flex;align-items:center;gap:10px}
+    .number-pill{min-width:50px;text-align:center;padding:6px 10px;border-radius:999px;background:#101b3a;border:1px solid #213064}
+
+    .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+    .thumb{position:relative;border:1px solid #203061;border-radius:12px;overflow:hidden;background:#0a1430}
+    .thumb img{width:100%;height:120px;object-fit:cover;display:block}
+    .thumb .meta{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;font-size:12px;color:#9db0d0}
+    .thumb .drag{position:absolute;inset:auto 8px 8px auto;background:#0b1a3a;border:1px solid #27407a;border-radius:10px;padding:4px 8px;font-size:11px}
+    .thumb .actions{position:absolute;top:6px;right:6px;display:flex;gap:6px}
+    .thumb button{background:rgba(5,9,24,.75);backdrop-filter:saturate(150%) blur(4px);border:1px solid #33467f;color:#c7d9ff;padding:6px 8px;border-radius:10px}
+
+    .sticky-actions{position:sticky;bottom:12px;display:flex;gap:10px;flex-wrap:wrap;padding:12px;background:linear-gradient(180deg,rgba(5,9,24,0),rgba(5,9,24,.85));backdrop-filter:blur(6px)}
+
+    .side .card{position:sticky;top:18px}
+
+    /* Ads scaffolding */
+    .ad{display:block;background:rgba(255,209,102,.08);border:1px dashed #9f7f2d;border-radius:12px;min-height:90px;display:grid;place-items:center;color:#ffd166}
+    .ad.small{min-height:60px}
+    .ad-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#c9a64f;margin-bottom:6px}
+
+    footer{margin-top:28px;color:#8ea0c0;font-size:13px}
+    .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+
+  <!-- jsPDF for PDF generation -->
+  <script defer src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <!-- Pica for high-quality resize (optional but improves quality & performance) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/pica@9.0.1/dist/pica.min.js"></script>
+
+  <!-- Google AdSense: fill your IDs in Settings (stores in localStorage).
+       IMPORTANT: Replace example.com with your actual domain and ensure policy compliance. -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" crossorigin="anonymous" id="adsbygoogle-loader"></script>
+</head>
+<body>
+  <div class="container" itemscope itemtype="https://schema.org/WebApplication">
+    <header>
+      <div class="logo">
+        <div class="logo-badge" aria-hidden="true">JP</div>
+        <div>
+          <h1 itemprop="name">JPG → PDF Converter</h1>
+          <p class="tagline">Fast, private, and free. Your images never leave this device.</p>
+        </div>
+      </div>
+      <nav aria-label="Utility">
+        <button class="btn inline secondary" id="btn-settings" aria-haspopup="dialog">Settings</button>
+        <a class="btn inline" href="#how" aria-label="Skip to How it works">How it works</a>
+      </nav>
+    </header>
+
+    <!-- Top Ad -->
+    <div class="ad" id="ad-top">
+      <div>
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      </div>
+    </div>
+
+    <main class="grid">
+      <section class="card">
+        <div class="head">
+          <div class="uploader" id="dropzone" role="region" aria-label="Upload JPG images by clicking or dropping files">
+            <input type="file" id="file-input" accept="image/jpeg,image/jpg,image/png" multiple />
+            <p><strong>Select or drop JPG/PNG files</strong></p>
+            <p class="tagline">You can reorder, compress, and resize before converting to PDF.</p>
+            <button class="btn" id="btn-select">Choose Images</button>
+          </div>
+        </div>
+        <div class="body">
+          <div class="controls" aria-label="Conversion settings">
+            <div>
+              <label for="quality">Compression</label>
+              <div class="range-row">
+                <input type="range" id="quality" min="10" max="100" value="80" />
+                <div class="number-pill"><span id="quality-val">80</span>%</div>
+              </div>
+            </div>
+            <div>
+              <label for="max-width">Max Width (px)</label>
+              <input id="max-width" type="number" min="320" step="10" value="2480" aria-describedby="mw-help" />
+              <div id="mw-help" class="sr-only">Set 2480 for A4 at 300dpi. Leave as-is for best quality.</div>
+            </div>
+            <div>
+              <label for="page-size">PDF Page</label>
+              <select id="page-size">
+                <option value="auto" selected>Auto (fit image)</option>
+                <option value="a4">A4</option>
+                <option value="letter">US Letter</option>
+              </select>
+            </div>
+            <div>
+              <label for="orientation">Orientation</label>
+              <select id="orientation">
+                <option value="auto" selected>Auto per image</option>
+                <option value="p">Portrait</option>
+                <option value="l">Landscape</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="sticky-actions" aria-live="polite">
+            <button class="btn secondary" id="btn-clear" disabled>Clear</button>
+            <button class="btn" id="btn-generate" disabled>Convert to PDF</button>
+            <span id="status" aria-live="polite" class="tagline"></span>
+          </div>
+
+          <div class="thumbs" id="thumbs" aria-label="Selected images list"></div>
+        </div>
+      </section>
+
+      <aside class="side">
+        <section class="card">
+          <div class="body">
+            <h2 style="margin-top:0">Monetization</h2>
+            <p class="tagline">Connect Google AdSense without editing code. Stored locally.</p>
+            <div style="display:grid;gap:10px">
+              <label for="ads-client">AdSense Client ID
+                <input id="ads-client" placeholder="ca-pub-XXXXXXXXXXXXXXXX" style="width:100%" />
+              </label>
+              <label for="ads-slot-top">Top Banner Slot ID
+                <input id="ads-slot-top" placeholder="e.g., 1234567890" style="width:100%" />
+              </label>
+              <label for="ads-slot-side">Sidebar Slot ID
+                <input id="ads-slot-side" placeholder="e.g., 0987654321" style="width:100%" />
+              </label>
+              <button class="btn inline" id="save-ads">Save AdSense IDs</button>
+              <p class="tagline" id="ads-msg" aria-live="polite"></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="body">
+            <h2 style="margin-top:0">Sponsored</h2>
+            <div class="ad small" id="ad-side">
+              <div>
+                <div class="ad-label">Advertisement</div>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="how">
+          <div class="body">
+            <h2 style="margin-top:0">How it works</h2>
+            <ol>
+              <li>Select or drop JPG/PNG files.</li>
+              <li>Set compression %, optional max width, and page options.</li>
+              <li>Click <em>Convert to PDF</em> to download your file.</li>
+            </ol>
+            <p class="tagline">All processing happens client‑side using Canvas + jsPDF. No uploads.</p>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <!-- In-content Ad -->
+    <div class="ad" id="ad-inline" style="margin-top:18px">
+      <div>
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout="in-article" data-full-width-responsive="true"></ins>
+      </div>
+    </div>
+
+    <footer>
+      <p>© <span id="year"></span> JPG to PDF Converter. Built for speed and privacy. <a href="#" rel="nofollow" id="btn-privacy">Privacy</a></p>
+    </footer>
+  </div>
+
+  <!-- Settings Dialog -->
+  <dialog id="settings-dialog" style="padding:0;border:0;border-radius:16px;max-width:680px;width:95%">
+    <form method="dialog" class="card" style="margin:0">
+      <div class="body">
+        <h3 style="margin:0 0 10px">Advanced PDF Options</h3>
+        <div class="controls">
+          <div>
+            <label for="dpi">Assumed DPI</label>
+            <input id="dpi" type="number" min="72" value="144" />
+          </div>
+          <div>
+            <label for="margin">Page Margin (pt)</label>
+            <input id="margin" type="number" min="0" value="24" />
+          </div>
+          <div>
+            <label for="pdf-title">PDF File Name</label>
+            <input id="pdf-title" placeholder="images.pdf" />
+          </div>
+          <div>
+            <label for="metadata">PDF Title Metadata</label>
+            <input id="metadata" placeholder="JPG to PDF Export" />
+          </div>
+        </div>
+      </div>
+      <div class="sticky-actions" style="position:static">
+        <button class="btn secondary" value="cancel">Close</button>
+        <button class="btn" id="apply-settings" value="default">Apply</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script>
+    // Utilities
+    const $ = (sel, el=document) => el.querySelector(sel);
+    const $$ = (sel, el=document) => Array.from(el.querySelectorAll(sel));
+    const state = { files: [], ads: { client:"", top:"", side:"" } };
+
+    // UI elements
+    const dropzone = $('#dropzone');
+    const fileInput = $('#file-input');
+    const btnSelect = $('#btn-select');
+    const thumbs = $('#thumbs');
+    const btnClear = $('#btn-clear');
+    const btnGenerate = $('#btn-generate');
+    const statusEl = $('#status');
+    const quality = $('#quality');
+    const qualityVal = $('#quality-val');
+    const maxWidth = $('#max-width');
+    const pageSize = $('#page-size');
+    const orientationSel = $('#orientation');
+
+    const settingsDlg = $('#settings-dialog');
+    const btnSettings = $('#btn-settings');
+    const dpiInput = $('#dpi');
+    const marginInput = $('#margin');
+    const pdfTitleInput = $('#pdf-title');
+    const metadataInput = $('#metadata');
+
+    const yearEl = $('#year'); yearEl.textContent = new Date().getFullYear();
+
+    // AdSense settings
+    const adsClient = $('#ads-client');
+    const adsSlotTop = $('#ads-slot-top');
+    const adsSlotSide = $('#ads-slot-side');
+    const saveAdsBtn = $('#save-ads');
+    const adsMsg = $('#ads-msg');
+
+    // Persist & load AdSense IDs
+    function loadAdIds(){
+      try{
+        const saved = JSON.parse(localStorage.getItem('adsense-ids')||'{}');
+        state.ads.client = saved.client||''; state.ads.top = saved.top||''; state.ads.side = saved.side||'';
+        adsClient.value = state.ads.client; adsSlotTop.value = state.ads.top; adsSlotSide.value = state.ads.side;
+        bootAdSense();
+      }catch(e){console.warn(e)}
+    }
+    function saveAdIds(){
+      state.ads.client = adsClient.value.trim();
+      state.ads.top = adsSlotTop.value.trim();
+      state.ads.side = adsSlotSide.value.trim();
+      localStorage.setItem('adsense-ids', JSON.stringify(state.ads));
+      bootAdSense(true);
+      adsMsg.textContent = 'Saved. Ads will (re)load if IDs are valid.';
+      setTimeout(()=> adsMsg.textContent = '', 4000);
+    }
+    saveAdsBtn.addEventListener('click', saveAdIds);
+
+    // Inject AdSense client ID into loader script and assign slots
+    function bootAdSense(reload=false){
+      const loader = document.getElementById('adsbygoogle-loader');
+      if(state.ads.client){
+        loader.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(state.ads.client)}`;
+        loader.setAttribute('data-ad-client', state.ads.client);
+      }
+      // Assign slot IDs where present
+      const topIns = $('#ad-top ins.adsbygoogle');
+      const sideIns = $('#ad-side ins.adsbygoogle');
+      const inlineIns = $('#ad-inline ins.adsbygoogle');
+      if(state.ads.top) topIns.setAttribute('data-ad-slot', state.ads.top);
+      if(state.ads.side) sideIns.setAttribute('data-ad-slot', state.ads.side);
+      // optional separate slot for inline: reuse top if not set
+      inlineIns.setAttribute('data-ad-slot', state.ads.top || state.ads.side || '');
+
+      if(window.adsbygoogle && reload){
+        // (Re)request ads
+        [topIns, sideIns, inlineIns].forEach(ins=>{
+          try{ (adsbygoogle = window.adsbygoogle || []).push({}); }catch(e){ /* ignore */ }
+        });
+      }
+    }
+
+    loadAdIds();
+
+    // Drag & drop
+    ['dragenter','dragover'].forEach(ev=>dropzone.addEventListener(ev, e=>{e.preventDefault(); dropzone.classList.add('dragover')}));
+    ;['dragleave','drop'].forEach(ev=>dropzone.addEventListener(ev, e=>{e.preventDefault(); if(ev==='drop'){handleFiles(e.dataTransfer.files)} dropzone.classList.remove('dragover')}));
+    btnSelect.addEventListener('click', ()=> fileInput.click());
+    fileInput.addEventListener('change', e=> handleFiles(e.target.files));
+
+    function handleFiles(fileList){
+      const files = Array.from(fileList).filter(f=>/image\/(jpeg|jpg|png)/i.test(f.type));
+      if(!files.length) return;
+      const starters = files.map((file, i)=>({ id: crypto.randomUUID(), file, name: file.name, url: URL.createObjectURL(file) }));
+      state.files.push(...starters);
+      renderThumbs();
+      btnGenerate.disabled = state.files.length===0;
+      btnClear.disabled = state.files.length===0;
+      status(`Added ${files.length} image${files.length>1?'s':''}.`);
+    }
+
+    function removeFile(id){
+      const i = state.files.findIndex(f=>f.id===id);
+      if(i>-1){ URL.revokeObjectURL(state.files[i].url); state.files.splice(i,1); renderThumbs(); }
+      btnGenerate.disabled = state.files.length===0;
+      btnClear.disabled = state.files.length===0;
+    }
+
+    function move(id, dir){
+      const i = state.files.findIndex(f=>f.id===id); if(i<0) return;
+      const j = i + (dir==='up'?-1:1); if(j<0 || j>=state.files.length) return;
+      const tmp = state.files[i]; state.files[i] = state.files[j]; state.files[j] = tmp; renderThumbs();
+    }
+
+    function renderThumbs(){
+      thumbs.innerHTML = '';
+      state.files.forEach((f, idx)=>{
+        const el = document.createElement('div'); el.className='thumb'; el.draggable=true; el.dataset.id=f.id;
+        el.innerHTML = `
+          <div class="actions">
+            <button title="Move up" aria-label="Move up">▲</button>
+            <button title="Move down" aria-label="Move down">▼</button>
+            <button title="Remove" aria-label="Remove">✕</button>
+          </div>
+          <img src="${f.url}" alt="${f.name}" loading="lazy" />
+          <div class="meta"><span>#${idx+1}</span><span>${f.file.type.replace('image/','').toUpperCase()}</span></div>`;
+        el.querySelectorAll('button')[0].addEventListener('click', ()=>move(f.id,'up'));
+        el.querySelectorAll('button')[1].addEventListener('click', ()=>move(f.id,'down'));
+        el.querySelectorAll('button')[2].addEventListener('click', ()=>removeFile(f.id));
+
+        // drag handle
+        el.addEventListener('dragstart', e=>{ e.dataTransfer.setData('text/plain', f.id); });
+        el.addEventListener('dragover', e=>{ e.preventDefault(); });
+        el.addEventListener('drop', e=>{ e.preventDefault(); const from = e.dataTransfer.getData('text/plain'); swapById(from, f.id); });
+        thumbs.appendChild(el);
+      });
+    }
+
+    function swapById(a,b){
+      const i = state.files.findIndex(f=>f.id===a), j = state.files.findIndex(f=>f.id===b);
+      if(i<0||j<0||i===j) return; const t = state.files[i]; state.files[i]=state.files[j]; state.files[j]=t; renderThumbs();
+    }
+
+    // Controls
+    quality.addEventListener('input', ()=>{ qualityVal.textContent = quality.value; });
+
+    btnClear.addEventListener('click', ()=>{
+      state.files.forEach(f=> URL.revokeObjectURL(f.url));
+      state.files = []; renderThumbs(); btnGenerate.disabled = true; btnClear.disabled = true; status('Cleared.');
+    });
+
+    // Settings dialog
+    btnSettings.addEventListener('click', ()=> settingsDlg.showModal());
+    $('#apply-settings').addEventListener('click', ()=> settingsDlg.close());
+
+    // Status helper
+    function status(msg){ statusEl.textContent = msg; }
+
+    // Core: image -> canvas (resize + compress)
+    async function drawToCanvas(img, maxW){
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      let {width, height} = img;
+      if(maxW && width > maxW){ const scale = maxW/width; width = Math.round(width*scale); height = Math.round(height*scale); }
+      canvas.width = width; canvas.height = height;
+      // Use pica if available for quality
+      if(window.pica){ await window.pica().resize(img, canvas); }
+      else { ctx.drawImage(img, 0, 0, width, height); }
+      return canvas;
+    }
+
+    function pageDims(type){
+      // return [w,h] in points (72pt per inch)
+      const pt = { a4:[595.28,841.89], letter:[612,792] };
+      return pt[type]||null;
+    }
+
+    btnGenerate.addEventListener('click', async ()=>{
+      if(!state.files.length) return;
+      btnGenerate.disabled = true; status('Processing images…');
+      const q = Math.min(100, Math.max(10, +quality.value)) / 100;
+      const maxW = Math.max(320, +maxWidth.value || 2480);
+      const assumedDPI = Math.max(72, +dpiInput.value || 144);
+      const margin = Math.max(0, +marginInput.value || 0);
+      const pdfName = (pdfTitleInput.value || 'images') + (pdfTitleInput.value.endsWith('.pdf')?'':'.pdf');
+
+      const { jsPDF } = window.jspdf; // UMD
+      let doc; let firstPage = true;
+
+      for(let i=0;i<state.files.length;i++){
+        const f = state.files[i];
+        const img = await loadImage(f.url);
+        const canvas = await drawToCanvas(img, maxW);
+        const dataUrl = canvas.toDataURL('image/jpeg', q);
+
+        // Figure page size
+        let or = orientationSel.value; // 'p','l','auto'
+        const isLandscape = canvas.width >= canvas.height;
+        if(or==='auto') or = isLandscape ? 'l' : 'p';
+        const fixed = pageSize.value !== 'auto';
+        const dims = fixed ? pageDims(pageSize.value) : [ (canvas.width / assumedDPI) * 72, (canvas.height / assumedDPI) * 72 ];
+        const [pw, ph] = or==='l' ? [Math.max(dims[0],dims[1]), Math.min(dims[0],dims[1])] : [Math.min(dims[0],dims[1]), Math.max(dims[0],dims[1])];
+
+        // Init doc
+        if(!doc){ doc = new jsPDF({ orientation: or==='l'?'landscape':'portrait', unit:'pt', format:[pw, ph] }); if(metadataInput.value) doc.setProperties({ title: metadataInput.value }); }
+        else { doc.addPage([pw, ph], or==='l'?'landscape':'portrait'); }
+
+        // Fit image with margins
+        const iw = pw - margin*2; const ih = ph - margin*2;
+        const scale = Math.min(iw/canvas.width, ih/canvas.height);
+        const dw = canvas.width * scale; const dh = canvas.height * scale;
+        const dx = (pw - dw)/2; const dy = (ph - dh)/2;
+        doc.addImage(dataUrl, 'JPEG', dx, dy, dw, dh, undefined, 'FAST');
+        status(`Added page ${i+1}/${state.files.length}`);
+      }
+
+      if(!doc){ status('Nothing to export.'); btnGenerate.disabled = false; return; }
+      doc.save(pdfName);
+      status('Done.'); btnGenerate.disabled = false;
+    });
+
+    function loadImage(src){
+      return new Promise((res, rej)=>{ const img = new Image(); img.onload=()=>res(img); img.onerror=rej; img.src=src; });
+    }
+
+    // Privacy modal (simple alert)
+    $('#btn-privacy').addEventListener('click', e=>{ e.preventDefault(); alert('All processing happens in your browser. No files are uploaded or stored on our servers.'); });
+  </script>
+</body>
+</html>

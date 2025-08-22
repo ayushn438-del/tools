@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All-in-One Image & PDF Tools – Convert, Compress, Merge Online</title>
+  <meta name="description" content="Free online tools to convert, compress, merge, and optimize images and PDFs. Fast, secure, and SEO-friendly with a clean responsive design." />
+  <link rel="canonical" href="https://example.com/" />
+
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #111832;
+      --text: #e8efff;
+      --muted: #9baac5;
+      --brand: #4f8cff;
+      --accent: #ffd166;
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    header {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0d1530;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--brand);
+    }
+    nav a {
+      margin: 0 10px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover { color: var(--accent); }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #1d2650, #0b1020);
+    }
+    .hero h1 { font-size: clamp(28px, 6vw, 48px); margin: 0; }
+    .hero p { color: var(--muted); font-size: 18px; margin-top: 12px; }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .tool-card {
+      background: var(--panel);
+      border: 1px solid #1d2b57;
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: transform .2s, box-shadow .2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .tool-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.35);
+    }
+    .tool-card h3 { margin-top: 0; }
+    .tool-card p { color: var(--muted); font-size: 14px; }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: var(--brand);
+      color: #04102e;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+    }
+    .btn:hover { background: #7bb3ff; }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid #1d2b57;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Image & PDF Tools</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="#tools">Tools</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Free Online Image & PDF Tools</h1>
+    <p>Convert, compress, merge, and optimize your images & PDFs quickly and securely.</p>
+  </section>
+
+  <section id="tools" class="tools-grid">
+    <div class="tool-card">
+      <h3>JPG to PDF</h3>
+      <p>Convert your JPG or PNG images to a high-quality PDF instantly.</p>
+      <a href="jpgtopdf.html" class="btn">Try Now</a>
+    </div>
+    <div class="tool-card">
+      <h3>PDF to JPG</h3>
+      <p>Extract and convert PDF pages into JPG images with ease.</p>
+      <a href="#" class="btn">Try Now</a>
+    </div>
+    <div class="tool-card">
+      <h3>Compress PDF</h3>
+      <p>Reduce PDF file size while maintaining visual quality.</p>
+      <a href="#" class="btn">Try Now</a>
+    </div>
+    <div class="tool-card">
+      <h3>Merge PDFs</h3>
+      <p>Combine multiple PDF files into one seamless document.</p>
+      <a href="#" class="btn">Try Now</a>
+    </div>
+    <div class="tool-card">
+      <h3>Image Compressor</h3>
+      <p>Compress JPG/PNG images to save space without losing quality.</p>
+      <a href="#" class="btn">Try Now</a>
+    </div>
+    <div class="tool-card">
+      <h3>PDF Splitter</h3>
+      <p>Split large PDF files into smaller, more manageable parts.</p>
+      <a href="#" class="btn">Try Now</a>
+    </div>
+  </section>
+
+  <section id="about" style="padding:40px 20px;max-width:900px;margin:auto;text-align:center">
+    <h2>About Our Tools</h2>
+    <p style="color:var(--muted)">All tools run entirely in your browser. Your files never leave your device. We focus on speed, privacy, and simplicity to make your workflow easier.</p>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Image & PDF Tools. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
