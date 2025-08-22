@@ -466,7 +466,7 @@
                 <div class="tool-card-content">
                     <h3>JPG To PDF</h3>
                     <p>Convert your JPG files to PDF documents with perfect formatting.</p>
-                    <a href="#">Use Tool</a>
+                    <a href="tools/jpgtopdf">Use Tool</a>
                 </div>
             </div>
             
